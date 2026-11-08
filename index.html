@@ -115,6 +115,25 @@
   .prose p:last-child{margin-bottom:0}
 
   /* origin */
+  .about-grid{display:grid;grid-template-columns:1fr 430px;gap:48px;align-items:start}
+  .origin-map{
+    background:#fff;border:1px solid var(--line);
+    padding:18px 18px 14px;
+  }
+  .origin-map .map-box{position:relative;min-height:240px}
+  .origin-map svg{width:100%;height:auto;display:block}
+  .origin-map .prov{
+    fill:#EDEBE4;stroke:#FBFAF7;stroke-width:.8;
+    transition:fill .18s ease;
+  }
+  .origin-map .prov.has{cursor:default}
+  .origin-map figcaption{
+    font-size:12px;color:var(--ink-3);
+    margin-top:10px;padding-top:10px;border-top:1px solid var(--line);
+  }
+  .map-legend{display:flex;flex-wrap:wrap;gap:7px 14px;margin-top:10px;font-size:12px;color:var(--ink-2)}
+  .map-legend span{display:inline-flex;align-items:center;gap:5px}
+  .map-legend i{width:9px;height:9px;border-radius:2px;display:inline-block}
   .origin{margin-top:40px;display:flex;flex-wrap:wrap;gap:8px}
   .chip{
     font-size:13px;padding:7px 14px;border:1px solid var(--line);
@@ -271,6 +290,7 @@
     .activity{padding:28px}
     section{padding:60px 0}
     .sec-sub{display:none}
+    .about-grid{grid-template-columns:1fr;gap:34px}
     .member{width:74px}
     .member.t1{width:88px}
     .member .ava{width:50px;height:50px;margin-bottom:7px}
@@ -340,20 +360,26 @@
       <h2>班级简介</h2>
       <span class="sec-sub">Class Profile</span>
     </div>
-    <div class="prose">
-      <p>
-        20260624 班是哈尔滨工程大学 2026 级本科班级，现有学生 34 人，班主任郎大鹏老师，辅导员刘璟仪老师。
-        班级以「勤学、团结、务实、进取」为班风，围绕学风建设、思想引领、文体活动与社会实践四条主线开展班级工作。
-      </p>
-      <p>
-        入学以来，班级建立了完整的成长记录体系：每一次活动有留痕，每一位同学的竞赛、科研、实践与荣誉都有档案。
-        我们相信，四年后回看时，这些看似琐碎的记录，会拼出一个班级真正的样子。
-      </p>
-    </div>
-    <div class="origin">
-      <span class="chip hi">山东</span><span class="chip hi">河北</span><span class="chip hi">辽宁</span>
-      <span class="chip hi">重庆</span><span class="chip">湖南</span><span class="chip">浙江</span>
-      <span class="chip">青海</span><span class="chip">新疆</span>
+    <div class="about-grid">
+      <div class="prose">
+        <p>
+          20260624 班是哈尔滨工程大学 2026 级本科班级，现有学生 34 人，班主任郎大鹏老师，辅导员刘璟仪老师。
+          班级以「勤学、团结、务实、进取」为班风，围绕学风建设、思想引领、文体活动与社会实践四条主线开展班级工作。
+        </p>
+        <p>
+          入学以来，班级建立了完整的成长记录体系：每一次活动有留痕，每一位同学的竞赛、科研、实践与荣誉都有档案。
+          我们相信，四年后回看时，这些看似琐碎的记录，会拼出一个班级真正的样子。
+        </p>
+        <p>
+          全班同学来自 <strong>8 个省、自治区、直辖市</strong>，其中山东 9 人、河北 8 人、辽宁 5 人、重庆 5 人，
+          新疆 3 人，湖南 2 人，浙江、青海各 1 人。
+        </p>
+      </div>
+      <figure class="origin-map">
+        <div id="cn-map" class="map-box"><span class="cloud-loading">正在加载地图…</span></div>
+        <figcaption>颜色深浅表示该省（区、市）在本班的生源人数，颜色越深人数越多；灰色为暂无同学来源的省区。</figcaption>
+        <div id="map-legend" class="map-legend"></div>
+      </figure>
     </div>
   </div>
 </section>
@@ -486,6 +512,59 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var box = document.getElementById('cn-map');
+  var legend = document.getElementById('map-legend');
+  if (!box) return;
+
+  function colorFor(n){
+    if (n >= 8) return '#024D9F';
+    if (n >= 5) return '#3C7CB8';
+    if (n >= 3) return '#84ADD3';
+    return '#C6DAEC';
+  }
+
+  Promise.all([
+    fetch('data/china-map.svg').then(function(r){ return r.text(); }),
+    fetch('data/members.json').then(function(r){ return r.json(); })
+  ]).then(function(res){
+    var svg = res[0], list = res[1];
+
+    var count = {};
+    list.forEach(function(m){
+      var o = (m.origin || '').trim();
+      if (o) count[o] = (count[o] || 0) + 1;
+    });
+
+    box.innerHTML = svg;
+    var root = box.querySelector('svg');
+
+    root.querySelectorAll('path[data-name]').forEach(function(p){
+      var full = p.getAttribute('data-name');
+      var hit = null;
+      Object.keys(count).forEach(function(k){
+        if (full.indexOf(k) === 0) hit = k;
+      });
+      if (!hit) return;
+      var n = count[hit];
+      p.style.fill = colorFor(n);
+      p.classList.add('has');
+      var t = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+      t.textContent = full + ' · ' + n + ' 人';
+      p.appendChild(t);
+    });
+
+    var rows = Object.keys(count).sort(function(a, b){ return count[b] - count[a]; });
+    legend.innerHTML = rows.map(function(k){
+      return '<span><i style="background:' + colorFor(count[k]) + '"></i>' + k + ' ' + count[k] + ' 人</span>';
+    }).join('');
+  }).catch(function(){
+    box.innerHTML = '<span class="cloud-loading">地图加载失败，请刷新重试。</span>';
+  });
+})();
+</script>
 
 <script>
 (function(){
