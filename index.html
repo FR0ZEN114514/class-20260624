@@ -346,7 +346,7 @@
     </p>
     <div class="stats">
       <div class="stat"><b>34</b><span>班级同学</span></div>
-      <div class="stat"><b>8</b><span>生源省区</span></div>
+      <div class="stat"><b>9</b><span>生源省区</span></div>
       <div class="stat"><b>199</b><span>校认定竞赛</span></div>
       <div class="stat"><b>4</b><span>同行年岁</span></div>
     </div>
@@ -370,9 +370,9 @@
           入学以来，班级建立了完整的成长记录体系：每一次活动有留痕，每一位同学的竞赛、科研、实践与荣誉都有档案。
           我们相信，四年后回看时，这些看似琐碎的记录，会拼出一个班级真正的样子。
         </p>
-        <p>
-          全班同学来自 <strong>8 个省、自治区、直辖市</strong>，其中山东 9 人、河北 8 人、辽宁 5 人、重庆 5 人，
-          新疆 3 人，湖南 2 人，浙江、青海各 1 人。
+        <p id="origin-summary">
+          全班同学与老师来自 9 个省、自治区、直辖市，其中山东 9 人、河北 8 人、辽宁 5 人、重庆 5 人，
+          新疆 3 人，湖南 2 人，黑龙江 2 人，浙江、青海各 1 人。
         </p>
       </div>
       <figure class="origin-map">
@@ -557,6 +557,15 @@
     });
 
     var rows = Object.keys(count).sort(function(a, b){ return count[b] - count[a]; });
+
+    var summary = document.getElementById('origin-summary');
+    if (summary){
+      var total = rows.reduce(function(s, k){ return s + count[k]; }, 0);
+      var parts = rows.map(function(k){ return k + ' ' + count[k] + ' 人'; });
+      summary.innerHTML = '全班 ' + total + ' 人（含班主任、辅导员）来自 <strong>' + rows.length
+        + ' 个省、自治区、直辖市</strong>，其中' + parts.join('、') + '。';
+    }
+
     legend.innerHTML = rows.map(function(k){
       return '<span><i style="background:' + colorFor(count[k]) + '"></i>' + k + ' ' + count[k] + ' 人</span>';
     }).join('');
