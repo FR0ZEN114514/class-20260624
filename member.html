@@ -92,7 +92,7 @@
   var id = new URLSearchParams(location.search).get('id');
   document.getElementById('edit').href = REPO;
   if (!id) return;
-  fetch('data/members.json').then(function(r){ return r.json(); }).then(function(list){
+  fetch('data/members.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(list){
     var m = null;
     for (var i=0;i<list.length;i++) if (String(list[i].id) === String(id)) { m = list[i]; break; }
     if (!m) {

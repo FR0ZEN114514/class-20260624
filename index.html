@@ -528,7 +528,7 @@
 
   Promise.all([
     fetch('data/china-map.svg').then(function(r){ return r.text(); }),
-    fetch('data/members.json').then(function(r){ return r.json(); })
+    fetch('data/members.json?v=' + Date.now()).then(function(r){ return r.json(); })
   ]).then(function(res){
     var svg = res[0], list = res[1];
 
@@ -617,7 +617,7 @@
     return 'data:image/svg+xml,' + encodeURIComponent(svg);
   }
 
-  fetch('data/members.json').then(function(r){ return r.json(); }).then(function(list){
+  fetch('data/members.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(list){
     list.sort(function(a, b){
       var ta = T1[a.role] ? 1 : (T2[a.role] ? 2 : 3);
       var tb = T1[b.role] ? 1 : (T2[b.role] ? 2 : 3);
@@ -672,7 +672,7 @@
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
     });
   }
-  fetch('data/notices.json').then(function(r){ return r.json(); }).then(function(data){
+  fetch('data/notices.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(data){
     var items = (data.items || []).slice().sort(function(a, b){
       return String(b.date || '').localeCompare(String(a.date || ''));
     });
