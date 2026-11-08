@@ -2,6 +2,25 @@
   "updated": "2026-11-08",
   "items": [
     {
+      "id": "n1",
+      "date": "2026-11-08",
+      "title": "工具入门：WorkBuddy 基本用法、加载 Skills、PDF 转 Markdown、Obsidian 笔记",
+      "author": "郎大鹏",
+      "role": "班主任",
+      "body": [
+        "这一条是给全班的学习工具入门。四件事，按顺序做一遍，以后交给你们的任务都用得上。"
+      ],
+      "list": [
+        "WorkBuddy 基本用法：安装后先熟悉对话、文件上传、结果导出三个入口；把要处理的文件直接拖进对话，让它读完再提问。",
+        "如何加载 skills：在 WorkBuddy 的 skills 设置里加载需要的技能包（如 PDF 处理、论文写作），加载后直接用自然语言描述任务即可调用。",
+        "把 PDF 转成 Markdown：加载文档处理类 skill，上传 PDF，说明「转成 Markdown，保留标题层级与表格」，导出 .md 文件。",
+        "用 Obsidian 做长期笔记：新建一个仓库（vault），把转好的 .md 丢进去，用「双链 + 标签」整理课程笔记，四年下来就是自己的知识库。"
+      ],
+      "links": [
+        { "text": "Obsidian 官网（免费）", "url": "https://obsidian.md" }
+      ]
+    },
+    {
       "id": "n2",
       "date": "2026-11-08",
       "title": "注册 GitHub 与飞书账号，学会在 GitHub 上操作",
@@ -19,25 +38,6 @@
       "links": [
         { "text": "班级展示页", "url": "https://dapenglang.github.io/class-20260624/" },
         { "text": "修改成员信息（members.json）", "url": "https://github.com/dapenglang/class-20260624/edit/main/data/members.json" }
-      ]
-    },
-    {
-      "id": "n1",
-      "date": "2026-11-08",
-      "title": "工具入门：WorkBuddy 基本用法、加载 Skills、PDF 转 Markdown、Obsidian 笔记",
-      "author": "郎大鹏",
-      "role": "班主任",
-      "body": [
-        "这一条是给全班的学习工具入门。四件事，按顺序做一遍，以后交给你们的任务都用得上。"
-      ],
-      "list": [
-        "WorkBuddy 基本用法：安装后先熟悉对话、文件上传、结果导出三个入口；把要处理的文件直接拖进对话，让它读完再提问。",
-        "如何加载 skills：在 WorkBuddy 的 skills 设置里加载需要的技能包（如 PDF 处理、论文写作），加载后直接用自然语言描述任务即可调用。",
-        "把 PDF 转成 Markdown：加载文档处理类 skill，上传 PDF，说明「转成 Markdown，保留标题层级与表格」，导出 .md 文件。",
-        "用 Obsidian 做长期笔记：新建一个仓库（vault），把转好的 .md 丢进去，用「双链 + 标签」整理课程笔记，四年下来就是自己的知识库。"
-      ],
-      "links": [
-        { "text": "Obsidian 官网（免费）", "url": "https://obsidian.md" }
       ]
     }
   ]
