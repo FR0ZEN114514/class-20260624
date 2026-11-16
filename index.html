@@ -275,8 +275,10 @@
   }
   .activity p{color:var(--ink-2);margin-bottom:16px}
   .figures{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+  .figures.single{grid-template-columns:1fr}
   figure{margin:0}
   figure img{width:100%;display:block;border:1px solid var(--line)}
+  figure.portrait img{max-width:360px}
   figcaption{font-size:12.5px;color:var(--ink-3);margin-top:10px;line-height:1.6}
 
   /* ---------- scores ---------- */
@@ -547,6 +549,31 @@
       <h2>活动风采</h2>
       <span class="sec-sub">Activities</span>
     </div>
+
+    <article class="activity" id="activity-tugofwar">
+      <span class="tag">2026 年 11 月 11 日 · 班级体育活动</span>
+      <h3>拔河比赛：力量不行，脑力来凑</h3>
+      <div class="meta">
+        时间：2026 年 11 月 11 日晚 ·
+        地点：学校田径场 ·
+        参与：20260624 班代表队
+      </div>
+      <p>
+        11 月 11 日晚，班级组队参加学校拔河比赛。赛前大家在跑道上列队待命、互相鼓劲，
+        真上手才知道这活儿光靠喊不顶事——几番拉锯之后，绳子还是没被拽过线，止步首轮。
+      </p>
+      <p>
+        输了就是输了，笑着认。班主任在群里留了一句：<strong>力量不行，脑力来凑</strong>，
+        把劲使在该使的地方。拔河比的是一时的爆发，往后四年比的是谁能沉住气把一件事做久。
+        这一场记在班级账上，下一场接着来。
+      </p>
+      <div class="figures single">
+        <figure class="portrait">
+          <img src="assets/tugofwar-1111.jpg" alt="夜间田径场上，班级同学列队准备拔河比赛" loading="lazy">
+          <figcaption>11 月 11 日晚，田径场跑道上一字排开的参赛队伍，等待裁判哨响。</figcaption>
+        </figure>
+      </div>
+    </article>
 
     <article class="activity">
       <span class="tag">2026 年 11 月 · 第一次活动</span>
