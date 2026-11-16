@@ -340,49 +340,37 @@
   .honor .v{font-family:var(--serif);font-size:16px;color:var(--ink-3)}
   .honor.filled .v{color:var(--ink);font-size:18px;font-weight:700}
 
-  /* ---------- competition ---------- */
-  .comp{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .comp-item{
-    background:#fff;border:1px solid var(--line);padding:28px;
-    position:relative;
+  /* ---------- competition & guidance (compact rows) ---------- */
+  .sec-block{margin-top:38px}
+  .blk-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+  .blk-head h3{font-family:var(--serif);font-size:19px;font-weight:700}
+  .blk-head .blk-sub{font-size:12px;color:var(--ink-3);margin-left:auto}
+  .rowlist{
+    border-top:1px solid var(--line);
+    display:grid;grid-template-columns:repeat(2,1fr);column-gap:34px;
   }
-  .comp-item .n{
-    font-family:var(--serif);font-size:40px;font-weight:700;
-    color:rgba(2,77,159,.14);line-height:1;position:absolute;
-    top:20px;right:24px;
+  .rowitem{
+    border-bottom:1px solid var(--line);padding:15px 4px 15px 0;
+    display:grid;grid-template-columns:62px 1fr;gap:3px 16px;align-items:start;
   }
-  .comp-item h4{font-size:16px;margin-bottom:10px;font-weight:600}
-  .comp-item p{font-size:13.5px;color:var(--ink-3);line-height:1.7}
-  .comp-item{cursor:pointer;transition:border-color .18s ease,background .18s ease,transform .18s ease}
-  .comp-item:hover,.comp-item:focus-visible{
-    border-color:rgba(2,77,159,.38);background:#FFFDF8;transform:translateY(-2px);outline:none;
+  .rowitem .rl-k{
+    font-family:var(--serif);color:var(--navy);font-weight:700;
+    font-size:12.5px;line-height:1.55;padding-top:1px;
   }
-  .comp-item .more{display:block;margin-top:16px;font-size:12.5px;color:var(--navy)}
-
-  /* ---------- learning resources ---------- */
-  .learn-head{margin-top:56px;padding-top:36px;border-top:1px solid var(--line)}
-  .learn-head h3{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:10px}
-  .learn-head p{font-size:13.5px;color:var(--ink-3);line-height:1.78;max-width:780px}
-  .learn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-  .learn{
-    background:#fff;border:1px solid var(--line);padding:22px 22px 20px;
-    display:flex;flex-direction:column;
+  .rowitem .rl-b{min-width:0}
+  .rowitem h4{font-size:14.5px;font-weight:600;line-height:1.5;margin-bottom:3px}
+  .rowitem p{font-size:12.5px;color:var(--ink-3);line-height:1.65}
+  .rowitem .rl-links{margin-top:6px;display:flex;flex-wrap:wrap;gap:5px 14px;font-size:12px}
+  .rowitem .rl-links a{border-bottom:1px solid rgba(2,77,159,.3);padding-bottom:1px}
+  .rowitem .rl-links a:hover{border-bottom-color:var(--navy)}
+  .rowitem.rowlink{cursor:pointer;transition:background .18s ease}
+  .rowitem.rowlink:hover,.rowitem.rowlink:focus-visible{background:#FFFDF8;outline:none}
+  .rowitem.rowlink h4::after{content:" →";color:var(--navy);font-weight:400}
+  .block-more{
+    display:inline-flex;align-items:center;gap:6px;margin-top:18px;
+    font-size:13.5px;color:var(--navy);
+    border-bottom:1px solid rgba(2,77,159,.3);padding-bottom:2px;
   }
-  .learn .l-tag{
-    font-size:11px;letter-spacing:.12em;color:var(--warm);
-    font-weight:600;margin-bottom:8px;
-  }
-  .learn h4{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.4;margin-bottom:9px}
-  .learn .l-desc{font-size:13px;color:var(--ink-2);line-height:1.75;margin-bottom:12px}
-  .learn .l-row{font-size:12.5px;color:var(--ink-3);line-height:1.72;margin-bottom:7px}
-  .learn .l-row b{color:var(--ink-2);font-weight:600}
-  .learn .l-links{
-    margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);
-    display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12.5px;
-  }
-  .learn .l-links a{border-bottom:1px solid rgba(2,77,159,.3);padding-bottom:1px}
-  .learn .l-links a:hover{border-bottom-color:var(--navy)}
-  .learn .l-links span{color:var(--ink-3)}
 
   /* ---------- people link ---------- */
   a.who{
@@ -431,8 +419,7 @@
     .stats{grid-template-columns:repeat(2,1fr);margin-top:44px}
     .grid-4{grid-template-columns:repeat(2,1fr)}
     .honor-grid{grid-template-columns:1fr}
-    .comp{grid-template-columns:1fr}
-    .learn-grid{grid-template-columns:1fr}
+    .rowlist{grid-template-columns:1fr}
     .figures{grid-template-columns:1fr}
     .scores-stats{grid-template-columns:repeat(2,1fr)}
     .timetable{min-width:660px}
@@ -738,181 +725,174 @@
       <h2>竞赛&amp;指导</h2>
       <span class="sec-sub">Competitions &amp; Guidance</span>
     </div>
-    <p style="color:var(--ink-2);max-width:720px;margin-bottom:36px">
+    <p style="color:var(--ink-2);max-width:760px;margin-bottom:34px">
       依据《哈尔滨工程大学 2026 年度学生创新创业校外竞赛库》，学校共认定校外竞赛
       <strong>199 项</strong>，其中 I 级 60 项、II 级 71 项、III 级 68 项。
-      班级知识库中已整理完整名录与大一参赛指南，以下为四个常用入口的说明；
-      下方另附华为技术领域的学习资料与公开课程，可供选方向、打基础时使用。
     </p>
-    <div class="comp">
-      <div class="comp-item" data-key="level1" tabindex="0" role="button">
-        <div class="n">60</div>
-        <h4>I 级竞赛清单</h4>
-        <p>学校认定级别最高的赛事，含主办单位与牵头学院，竞赛加分与保研认定以此为准。</p>
-        <span class="more">查看清单与建议</span>
+
+    <div class="sec-block">
+      <div class="blk-head">
+        <h3>竞赛名录</h3>
+        <span class="blk-sub">点开任一条查看清单与备赛建议</span>
       </div>
-      <div class="comp-item" data-key="level23" tabindex="0" role="button">
-        <div class="n">139</div>
-        <h4>II 级与 III 级竞赛清单</h4>
-        <p>覆盖面更广的赛事名录，适合有兴趣拓展方向、积累经验的同学选择参赛。</p>
-        <span class="more">查看清单与建议</span>
-      </div>
-      <div class="comp-item" data-key="cs10" tabindex="0" role="button">
-        <div class="n">10</div>
-        <h4>计算机类专业相关竞赛</h4>
-        <p>算法编程、AI 开发、机器人、学科打底四类，含十项重点赛事的报名时间与备考路线。</p>
-        <span class="more">查看清单与建议</span>
-      </div>
-      <div class="comp-item" data-key="guide12" tabindex="0" role="button">
-        <div class="n">12</div>
-        <h4>大一新生参赛指南</h4>
-        <p>参赛友好度分级、全年参赛日历与费用速查表，回答"大一能不能报、什么时候报"。</p>
-        <span class="more">查看清单与建议</span>
+      <div class="rowlist">
+        <div class="rowitem rowlink" data-key="level1" tabindex="0" role="button">
+          <div class="rl-k">60 项</div>
+          <div class="rl-b">
+            <h4>I 级竞赛清单</h4>
+            <p>级别最高，含主办单位与牵头学院；加分与保研认定以此为准。</p>
+          </div>
+        </div>
+        <div class="rowitem rowlink" data-key="level23" tabindex="0" role="button">
+          <div class="rl-k">139 项</div>
+          <div class="rl-b">
+            <h4>II 级与 III 级竞赛清单</h4>
+            <p>覆盖面更广，适合拓展方向、积累经验的同学选择参赛。</p>
+          </div>
+        </div>
+        <div class="rowitem rowlink" data-key="cs10" tabindex="0" role="button">
+          <div class="rl-k">10 项</div>
+          <div class="rl-b">
+            <h4>计算机类专业相关竞赛</h4>
+            <p>算法、AI、机器人、学科打底四类，含报名时间与备考路线。</p>
+          </div>
+        </div>
+        <div class="rowitem rowlink" data-key="guide12" tabindex="0" role="button">
+          <div class="rl-k">12 条</div>
+          <div class="rl-b">
+            <h4>大一新生参赛指南</h4>
+            <p>参赛友好度分级、全年日历与费用速查，回答「能不能报、何时报」。</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="learn-head">
-      <h3>学习资料 · 华为技术领域资源与课程</h3>
-      <p>
-        以下为华为 ICT 学院公开的技术文档与在线课程，按「芯片 → 硬件使能 → 操作系统 → 数据库 → 编程语言 → 应用 → 通信/存储」共
-        11 个方向整理。每条列出资料简介、主要内容与适学基础，可据此判断自己当前该从哪个方向入手：
-        大一阶段建议先走鸿蒙、CodeArts、数据通信三条零基础可上手的线，芯片与 CANN 方向留到大二有项目需要时再进入。
-      </p>
-    </div>
-    <div class="learn-grid">
-      <article class="learn">
-        <div class="l-tag">芯片</div>
-        <h4>Ascend 昇腾</h4>
-        <p class="l-desc">华为自研的 AI 处理器与全栈 AI 计算平台，覆盖芯片、板卡、框架到工具链，是国内 AI 算力的主流底座之一。</p>
-        <div class="l-row"><b>主要内容</b>：Atlas 训练/推理硬件、昇腾软件栈与算子库、模型迁移适配、推理服务部署。</div>
-        <div class="l-row"><b>适学基础</b>：有 Python 基础、了解神经网络基本概念；建议大一下学期后再深入，纯零基础先补深度学习入门。</div>
-        <div class="l-links">
-          <a href="https://www.hiascend.com/document" target="_blank" rel="noopener">开发者文档 ↗</a>
-          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=BtuLJRVx32xaO2NI-3ar8NQIDiU" target="_blank" rel="noopener">在线课程 ↗</a>
+    <div class="sec-block">
+      <div class="blk-head">
+        <h3>学习资料 · 华为技术领域</h3>
+        <span class="blk-sub">11 个方向 · 公开文档与在线课程</span>
+      </div>
+      <div class="rowlist">
+        <div class="rowitem">
+          <div class="rl-k">芯片</div>
+          <div class="rl-b">
+            <h4>Ascend 昇腾</h4>
+            <p>自研 AI 处理器与全栈平台；需 Python 与神经网络基础，大一下再深入。</p>
+            <div class="rl-links">
+              <a href="https://www.hiascend.com/document" target="_blank" rel="noopener">文档 ↗</a>
+              <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=BtuLJRVx32xaO2NI-3ar8NQIDiU" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">芯片</div>
-        <h4>Kunpeng 鲲鹏</h4>
-        <p class="l-desc">基于 ARM 架构的服务器与终端处理器及配套生态，是国产化算力平台的核心硬件。</p>
-        <div class="l-row"><b>主要内容</b>：鲲鹏处理器与 TaiShan 整机规格、软件迁移与编译适配、性能调优、鲲鹏开发套件。</div>
-        <div class="l-row"><b>适学基础</b>：会 Linux 基本命令、有 C/C++ 或计算机组成基础更顺；大一可先看架构与生态概念，动手留到大二。</div>
-        <div class="l-links">
-          <a href="https://www.hikunpeng.com/document" target="_blank" rel="noopener">开发者文档 ↗</a>
+        <div class="rowitem">
+          <div class="rl-k">芯片</div>
+          <div class="rl-b">
+            <h4>Kunpeng 鲲鹏</h4>
+            <p>ARM 架构服务器处理器与生态；会 Linux 命令、有组成基础更顺。</p>
+            <div class="rl-links">
+              <a href="https://www.hikunpeng.com/document" target="_blank" rel="noopener">文档 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">硬件使能</div>
-        <h4>CANN 异构计算架构</h4>
-        <p class="l-desc">昇腾芯片之上的计算架构层，承担算子、图编译与运行时，作用相当于昇腾生态里的「CUDA」。</p>
-        <div class="l-row"><b>主要内容</b>：算子开发与 Ascend C 编程、图编译与执行、模型推理加速、算子性能调优。</div>
-        <div class="l-row"><b>适学基础</b>：需 C++、并行计算与深度学习基础，难度偏高；建议大二后结合具体项目或竞赛再学。</div>
-        <div class="l-links">
-          <a href="https://gitcode.com/cann" target="_blank" rel="noopener">开源代码仓 ↗</a>
-          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=qS4mF6lijbGojmzxSlKlhX4ccow" target="_blank" rel="noopener">在线课程 ↗</a>
-          <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=OzmmAgYoN6SaHMAFX2n8lpczWdo" target="_blank" rel="noopener">课程（ICT 学院）↗</a>
+        <div class="rowitem">
+          <div class="rl-k">硬件使能</div>
+          <div class="rl-b">
+            <h4>CANN</h4>
+            <p>昇腾之上的算子与图引擎层，相当于「昇腾 CUDA」；需 C++ 与并行计算。</p>
+            <div class="rl-links">
+              <a href="https://gitcode.com/cann" target="_blank" rel="noopener">代码仓 ↗</a>
+              <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=qS4mF6lijbGojmzxSlKlhX4ccow" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">操作系统</div>
-        <h4>HarmonyOS 鸿蒙</h4>
-        <p class="l-desc">面向全场景的分布式操作系统，一次开发、多端部署，覆盖手机、平板、穿戴、车机与智能家居。</p>
-        <div class="l-row"><b>主要内容</b>：ArkTS 语言与 ArkUI 声明式界面、Stage 应用模型、分布式能力、NearLink 星闪 SDK。</div>
-        <div class="l-row"><b>适学基础</b>：零基础可入门，会 JavaScript/TypeScript 上手更快；大一非常适合作为第一个完整 App 练手。</div>
-        <div class="l-links">
-          <a href="https://developer.huawei.com/consumer/cn/doc/" target="_blank" rel="noopener">开发文档 ↗</a>
-          <a href="https://developer.huawei.com/consumer/cn/sdk/nearlink-kit/" target="_blank" rel="noopener">NearLink SDK ↗</a>
-          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=XL0L0sK2ENrPjPausPnTSlESw9o" target="_blank" rel="noopener">在线课程 ↗</a>
+        <div class="rowitem">
+          <div class="rl-k">操作系统</div>
+          <div class="rl-b">
+            <h4>HarmonyOS 鸿蒙</h4>
+            <p>全场景分布式系统，ArkTS 开发；零基础可学，大一最适合做第一个 App。</p>
+            <div class="rl-links">
+              <a href="https://developer.huawei.com/consumer/cn/doc/" target="_blank" rel="noopener">文档 ↗</a>
+              <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=XL0L0sK2ENrPjPausPnTSlESw9o" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">操作系统</div>
-        <h4>openEuler 开源操作系统</h4>
-        <p class="l-desc">开源 Linux 服务器发行版，是国产服务器与鲲鹏生态的主流操作系统底座。</p>
-        <div class="l-row"><b>主要内容</b>：安装与日常运维、Shell 与 systemd、内核与驱动、容器与云原生基础。</div>
-        <div class="l-row"><b>适学基础</b>：有一点 Linux 命令行基础最好；可与《操作系统》课程同步学，大一先练命令与装系统。</div>
-        <div class="l-links">
-          <a href="https://docs.openeuler.openatom.cn/zh/" target="_blank" rel="noopener">官方文档 ↗</a>
-          <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=cK1Ah7-CwXBgeBs4nO5ettLReAc" target="_blank" rel="noopener">在线课程 ↗</a>
+        <div class="rowitem">
+          <div class="rl-k">操作系统</div>
+          <div class="rl-b">
+            <h4>openEuler</h4>
+            <p>国产 Linux 服务器发行版；有一点命令行基础，可与《操作系统》同步。</p>
+            <div class="rl-links">
+              <a href="https://docs.openeuler.openatom.cn/zh/" target="_blank" rel="noopener">文档 ↗</a>
+              <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=cK1Ah7-CwXBgeBs4nO5ettLReAc" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">数据库</div>
-        <h4>openGauss 关系型数据库</h4>
-        <p class="l-desc">开源关系型数据库，华为 GaussDB 的内核来源，国产数据库方向的入门主线。</p>
-        <div class="l-row"><b>主要内容</b>：SQL 与存储过程、安装部署与参数配置、备份恢复、性能调优、主备高可用。</div>
-        <div class="l-row"><b>适学基础</b>：需先会 SQL 与数据库基本概念；大一可先自学 SQL，等学过《数据库原理》再深入。</div>
-        <div class="l-links">
-          <a href="https://docs.opengauss.org/zh/" target="_blank" rel="noopener">官方文档 ↗</a>
-          <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=8wZbzgAUXSolTT0QLaiCqKtlbGM" target="_blank" rel="noopener">在线课程 ↗</a>
+        <div class="rowitem">
+          <div class="rl-k">数据库</div>
+          <div class="rl-b">
+            <h4>openGauss</h4>
+            <p>开源关系型数据库，GaussDB 内核来源；先会 SQL 再深入。</p>
+            <div class="rl-links">
+              <a href="https://docs.opengauss.org/zh/" target="_blank" rel="noopener">文档 ↗</a>
+              <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=8wZbzgAUXSolTT0QLaiCqKtlbGM" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">编程语言</div>
-        <h4>仓颉 Cangjie</h4>
-        <p class="l-desc">华为自研的静态强类型编程语言，面向全场景智能应用，主打原生并发与跨语言互操作。</p>
-        <div class="l-row"><b>主要内容</b>：语法与类型系统、并发模型、与 ArkTS/Java 互操作、包管理与工具链。</div>
-        <div class="l-row"><b>适学基础</b>：已有 C / Java / Python 任一基础者最合适；零基础不建议从它起步，先打好一门主流语言。</div>
-        <div class="l-links">
-          <a href="https://cangjie-lang.cn/docs" target="_blank" rel="noopener">语言文档 ↗</a>
-          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=4nejfEe0B_cV06_21BnY9Sy60-Q" target="_blank" rel="noopener">在线课程 ↗</a>
+        <div class="rowitem">
+          <div class="rl-k">编程语言</div>
+          <div class="rl-b">
+            <h4>仓颉 Cangjie</h4>
+            <p>自研静态强类型语言，原生并发；已有 C/Java/Python 之一再学。</p>
+            <div class="rl-links">
+              <a href="https://cangjie-lang.cn/docs" target="_blank" rel="noopener">文档 ↗</a>
+              <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=4nejfEe0B_cV06_21BnY9Sy60-Q" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">应用</div>
-        <h4>华为云码道 CodeArts</h4>
-        <p class="l-desc">华为云一站式软件开发生产线（DevOps），把需求、代码、构建、测试、部署串成一条流水线，含 AI 辅助编程。</p>
-        <div class="l-row"><b>主要内容</b>：项目与代码托管、CI/CD 流水线、代码检查与安全扫描、AI 生成与补全代码。</div>
-        <div class="l-row"><b>适学基础</b>：零基础即可上手，适合课程设计、团队项目里练工程协作与版本管理。</div>
-        <div class="l-links">
-          <a href="https://www.huaweicloud.com/product/codearts/ai.html" target="_blank" rel="noopener">产品介绍 ↗</a>
-          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=perj-8txgrLOH9exDX7Rq9S5Mvo" target="_blank" rel="noopener">在线课程 ↗</a>
+        <div class="rowitem">
+          <div class="rl-k">应用</div>
+          <div class="rl-b">
+            <h4>华为云码道 CodeArts</h4>
+            <p>一站式 DevOps 生产线，含 AI 辅助编程；零基础可上手。</p>
+            <div class="rl-links">
+              <a href="https://www.huaweicloud.com/product/codearts/ai.html" target="_blank" rel="noopener">产品 ↗</a>
+              <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=perj-8txgrLOH9exDX7Rq9S5Mvo" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">通信</div>
-        <h4>数据通信、网络安全</h4>
-        <p class="l-desc">华为 ICT 学院的数据通信与网络安全方向课程，是网络工程的入门主线，可衔接 HCIA 认证路线。</p>
-        <div class="l-row"><b>主要内容</b>：TCP/IP 与路由交换、网络协议分析、安全基础与防火墙、常见攻防意识。</div>
-        <div class="l-row"><b>适学基础</b>：零基础可学，大一即可开始；与《计算机网络》课程同步效果最好。</div>
-        <div class="l-links">
-          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=6NUCDEBHwRLwUI6I-81YTaMJHrk" target="_blank" rel="noopener">数通课程 ↗</a>
-          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=5F6BWEhKtVbD3qTe8jjFfG48Mws" target="_blank" rel="noopener">安全课程 ↗</a>
-          <span>（该方向仅提供课程，无公开文档）</span>
+        <div class="rowitem">
+          <div class="rl-k">通信</div>
+          <div class="rl-b">
+            <h4>数据通信、网络安全</h4>
+            <p>网络工程入门主线，可衔接 HCIA；零基础可学，大一即可开始。</p>
+            <div class="rl-links">
+              <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=6NUCDEBHwRLwUI6I-81YTaMJHrk" target="_blank" rel="noopener">数通课程 ↗</a>
+              <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=5F6BWEhKtVbD3qTe8jjFfG48Mws" target="_blank" rel="noopener">安全课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">通信</div>
-        <h4>存储</h4>
-        <p class="l-desc">华为存储方向课程，覆盖企业级存储与数据保护，可衔接 HCIA-Storage 认证路线。</p>
-        <div class="l-row"><b>主要内容</b>：RAID 与磁盘基础、SAN/NAS 组网、分布式存储、备份与容灾。</div>
-        <div class="l-row"><b>适学基础</b>：零基础可学，有一点网络基础更顺；大一以了解概念为主，不必急于考证。</div>
-        <div class="l-links">
-          <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=kyVS7OvayWvNDWF6hoBTcopya3Y" target="_blank" rel="noopener">在线课程 ↗</a>
-          <span>（该方向仅提供课程，无公开文档）</span>
+        <div class="rowitem">
+          <div class="rl-k">通信</div>
+          <div class="rl-b">
+            <h4>存储</h4>
+            <p>企业级存储与数据保护，可衔接 HCIA-Storage；零基础可学。</p>
+            <div class="rl-links">
+              <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=kyVS7OvayWvNDWF6hoBTcopya3Y" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
-
-      <article class="learn">
-        <div class="l-tag">通信</div>
-        <h4>无线、光</h4>
-        <p class="l-desc">华为无线接入与光传输方向课程，面向 5G 网络与光通信，偏通信工程与电子信息方向。</p>
-        <div class="l-row"><b>主要内容</b>：5G 网络架构与无线接入、OTN/WDM 光传输、站点与链路基础。</div>
-        <div class="l-row"><b>适学基础</b>：零基础可学，适合对通信、电子方向感兴趣的同学；配合《信号与系统》等课程理解更快。</div>
-        <div class="l-links">
-          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=Y3pmAdQYpsikDNMpbK7YSAvPAy8" target="_blank" rel="noopener">在线课程 ↗</a>
-          <span>（该方向仅提供课程，无公开文档）</span>
+        <div class="rowitem">
+          <div class="rl-k">通信</div>
+          <div class="rl-b">
+            <h4>无线、光</h4>
+            <p>5G 接入与光传输方向；适合对通信、电子感兴趣的同学。</p>
+            <div class="rl-links">
+              <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=Y3pmAdQYpsikDNMpbK7YSAvPAy8" target="_blank" rel="noopener">课程 ↗</a>
+            </div>
+          </div>
         </div>
-      </article>
+      </div>
+      <a class="block-more" href="learn.html">查看完整学习资料（主要内容 · 适学基础 · 全部链接）→</a>
     </div>
   </div>
 </section>
@@ -1156,7 +1136,7 @@
   var modal = document.getElementById('cm-modal');
   if (!modal) return;
   var body = document.getElementById('cm-body');
-  var cards = [].slice.call(document.querySelectorAll('.comp-item[data-key]'));
+  var cards = [].slice.call(document.querySelectorAll('.rowitem[data-key]'));
   var map = {}, lastFocus = null;
 
   function esc(s){
@@ -1205,7 +1185,7 @@
     })
     .catch(function(){
       cards.forEach(function(c){
-        c.querySelector('.more').textContent = '内容加载失败，请刷新重试';
+        c.querySelector('.rl-b p').textContent = '内容加载失败，请刷新重试';
       });
     });
 

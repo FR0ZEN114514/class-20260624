@@ -40,21 +40,22 @@
  {
   "id": "m05",
   "name": "徐文泽",
-  "nick": "同学01",
+  "nick": "ZZx-0908",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "ZZx-0908",
   "origin": "山东",
   "email": "Wenze_Xu@outlook.com"
  },
  {
   "id": "m06",
   "name": "于卫振",
-  "nick": "同学02",
+  "nick": "YUWEIZHEN8900",
   "role": "同学",
   "duty": "",
-  "github": "",
-  "origin": "山东"
+  "github": "YUWEIZHEN8900",
+  "origin": "山东",
+  "email": "yuweizhenalxy@outlook.com"
  },
  {
   "id": "m07",
@@ -210,20 +211,22 @@
  {
   "id": "m23",
   "name": "黄梓皓",
-  "nick": "同学15",
+  "nick": "hzh863",
   "role": "同学",
   "duty": "",
-  "github": "",
-  "origin": "重庆"
+  "github": "hzh863",
+  "origin": "重庆",
+  "email": "hzh863@outlook.com"
  },
  {
   "id": "m24",
   "name": "罗裕熙",
-  "nick": "同学16",
+  "nick": "luoyuxi0702lyx",
   "role": "同学",
   "duty": "",
-  "github": "",
-  "origin": "重庆"
+  "github": "luoyuxi0702lyx",
+  "origin": "重庆",
+  "email": "luoyuxi0702@gmail.com"
  },
  {
   "id": "m25",
@@ -282,7 +285,8 @@
   "role": "团支书",
   "duty": "团建 · 团日活动 · 思想工作",
   "github": "",
-  "origin": "山东"
+  "origin": "山东",
+  "email": "ShenYiFei2793@outlook.com"
  },
  {
   "id": "m31",
@@ -297,10 +301,10 @@
  {
   "id": "m32",
   "name": "姚佳玉",
-  "nick": "zhanghao1255",
+  "nick": "yaojiayv",
   "role": "心理委员",
   "duty": "心理健康 · 情绪疏导",
-  "github": "zhanghao1255",
+  "github": "yaojiayv",
   "origin": "辽宁",
   "email": "zhanghao12555@outlook.com"
  },
@@ -341,7 +345,8 @@
   "role": "同学",
   "duty": "",
   "github": "",
-  "origin": "新疆"
+  "origin": "新疆",
+  "email": "MaLY0123@outlook.com"
  },
  {
   "id": "m00",

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>学习资料 · 华为技术领域 | 20260624班</title>
+<meta name="description" content="哈尔滨工程大学 20260624 班学习资料：华为技术领域公开文档与在线课程，含资料简介、主要内容与适学基础。">
+<style>
+  :root{
+    --navy:#024D9F;
+    --navy-deep:#013A78;
+    --ink:#1B1B1F;
+    --ink-2:#4A4A52;
+    --ink-3:#7A7A85;
+    --paper:#FBFAF7;
+    --line:#E4E0D8;
+    --warm:#B8572E;
+    --serif:"Songti SC","Noto Serif SC",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:var(--sans);color:var(--ink);background:var(--paper);
+    line-height:1.75;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--navy);text-decoration:none}
+  .wrap{max-width:860px;margin:0 auto;padding:0 32px}
+
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,250,247,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em;color:var(--ink)}
+  .brand .mark{
+    width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
+    display:grid;place-items:center;font-family:var(--serif);font-size:13px;font-weight:700;
+  }
+  .brand small{display:block;font-size:11px;color:var(--ink-3);font-weight:400;letter-spacing:.08em}
+  nav .back{font-size:13.5px;color:var(--ink-2)}
+  nav .back:hover{color:var(--navy)}
+
+  .page-head{padding:64px 0 32px;border-bottom:1px solid var(--line)}
+  .eyebrow{
+    font-size:11.5px;letter-spacing:.18em;color:var(--warm);
+    text-transform:uppercase;font-weight:600;margin-bottom:14px;
+  }
+  .page-head h1{font-family:var(--serif);font-size:clamp(28px,4.6vw,40px);line-height:1.26;font-weight:700}
+  .page-head .sub{color:var(--ink-3);font-size:13.5px;margin-top:12px}
+  .lead{
+    font-size:14px;color:var(--ink-2);line-height:1.85;
+    padding:22px 0 24px;border-bottom:1px solid var(--line);
+  }
+
+  .lr-list{display:block}
+  .lr-item{
+    border-bottom:1px solid var(--line);padding:24px 0;
+    display:grid;grid-template-columns:96px 1fr;gap:4px 24px;align-items:start;
+    scroll-margin-top:80px;
+  }
+  .lr-side .lr-tag{
+    display:inline-block;font-size:11px;letter-spacing:.08em;color:var(--warm);
+    border:1px solid rgba(184,87,46,.32);padding:0 6px;margin-bottom:7px;
+  }
+  .lr-side .lr-idx{display:block;font-family:var(--serif);font-size:12px;color:var(--ink-3)}
+  .lr-item h2{font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.45;margin-bottom:8px}
+  .lr-item .lr-desc{font-size:14px;color:var(--ink-2);line-height:1.8;margin-bottom:10px}
+  .lr-row{font-size:13.5px;color:var(--ink-2);line-height:1.8;margin-bottom:5px}
+  .lr-row b{color:var(--ink);font-weight:600}
+  .lr-links{margin-top:11px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px}
+  .lr-links a{border-bottom:1px solid rgba(2,77,159,.3);padding-bottom:1px}
+  .lr-links a:hover{border-bottom-color:var(--navy)}
+  .lr-links span{font-size:12px;color:var(--ink-3)}
+
+  footer{padding:44px 0 56px;border-top:1px solid var(--line);margin-top:36px}
+  footer p{font-size:12.5px;color:var(--ink-3);line-height:1.8}
+  footer a{color:var(--ink-2)}
+
+  @media (max-width:640px){
+    .wrap{padding:0 20px}
+    .page-head{padding:44px 0 26px}
+    nav .wrap{height:58px}
+    .lr-item{grid-template-columns:1fr;gap:8px;padding:20px 0}
+    .lr-side{display:flex;align-items:center;gap:8px}
+    .lr-side .lr-tag{margin-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">24</span>
+      <span>20260624班<small>HARBIN ENGINEERING UNIVERSITY</small></span>
+    </a>
+    <a class="back" href="index.html#competition">← 返回竞赛&amp;指导</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow">Learning Resources · 学习资料</div>
+    <h1>华为技术领域资源与课程</h1>
+    <p class="sub">11 个方向 · 华为 ICT 学院公开文档与在线课程 · 附资料简介、主要内容与适学基础</p>
+  </div>
+
+  <p class="lead">
+    按「芯片 → 硬件使能 → 操作系统 → 数据库 → 编程语言 → 应用 → 通信/存储」排列。选方向时先看「适学基础」一栏：
+    大一建议先走鸿蒙、CodeArts、数据通信这三条零基础可上手的线；芯片与 CANN 方向留到大二有项目需要时再进入。
+    所有链接均指向华为官方公开页面，注册华为账号后即可免费学习。
+  </p>
+
+  <div class="lr-list">
+
+    <article class="lr-item" id="ascend">
+      <div class="lr-side"><span class="lr-tag">芯片</span><span class="lr-idx">01</span></div>
+      <div>
+        <h2>Ascend 昇腾</h2>
+        <p class="lr-desc">华为自研的 AI 处理器与全栈 AI 计算平台，覆盖芯片、板卡、框架到工具链，是国内 AI 算力的主流底座之一。</p>
+        <div class="lr-row"><b>主要内容</b>：Atlas 训练/推理硬件、昇腾软件栈与算子库、模型迁移适配、推理服务部署。</div>
+        <div class="lr-row"><b>适学基础</b>：有 Python 基础、了解神经网络基本概念；建议大一下学期后再深入，纯零基础先补深度学习入门。</div>
+        <div class="lr-links">
+          <a href="https://www.hiascend.com/document" target="_blank" rel="noopener">开发者文档 ↗</a>
+          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=BtuLJRVx32xaO2NI-3ar8NQIDiU" target="_blank" rel="noopener">在线课程 ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="kunpeng">
+      <div class="lr-side"><span class="lr-tag">芯片</span><span class="lr-idx">02</span></div>
+      <div>
+        <h2>Kunpeng 鲲鹏</h2>
+        <p class="lr-desc">基于 ARM 架构的服务器与终端处理器及配套生态，是国产化算力平台的核心硬件。</p>
+        <div class="lr-row"><b>主要内容</b>：鲲鹏处理器与 TaiShan 整机规格、软件迁移与编译适配、性能调优、鲲鹏开发套件。</div>
+        <div class="lr-row"><b>适学基础</b>：会 Linux 基本命令、有 C/C++ 或计算机组成基础更顺；大一可先看架构与生态概念，动手留到大二。</div>
+        <div class="lr-links">
+          <a href="https://www.hikunpeng.com/document" target="_blank" rel="noopener">开发者文档 ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="cann">
+      <div class="lr-side"><span class="lr-tag">硬件使能</span><span class="lr-idx">03</span></div>
+      <div>
+        <h2>CANN 异构计算架构</h2>
+        <p class="lr-desc">昇腾芯片之上的计算架构层，承担算子、图编译与运行时，作用相当于昇腾生态里的「CUDA」。</p>
+        <div class="lr-row"><b>主要内容</b>：算子开发与 Ascend C 编程、图编译与执行、模型推理加速、算子性能调优。</div>
+        <div class="lr-row"><b>适学基础</b>：需 C++、并行计算与深度学习基础，难度偏高；建议大二后结合具体项目或竞赛再学。</div>
+        <div class="lr-links">
+          <a href="https://gitcode.com/cann" target="_blank" rel="noopener">开源代码仓 ↗</a>
+          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=qS4mF6lijbGojmzxSlKlhX4ccow" target="_blank" rel="noopener">在线课程 ↗</a>
+          <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=OzmmAgYoN6SaHMAFX2n8lpczWdo" target="_blank" rel="noopener">课程（ICT 学院）↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="harmonyos">
+      <div class="lr-side"><span class="lr-tag">操作系统</span><span class="lr-idx">04</span></div>
+      <div>
+        <h2>HarmonyOS 鸿蒙</h2>
+        <p class="lr-desc">面向全场景的分布式操作系统，一次开发、多端部署，覆盖手机、平板、穿戴、车机与智能家居。</p>
+        <div class="lr-row"><b>主要内容</b>：ArkTS 语言与 ArkUI 声明式界面、Stage 应用模型、分布式能力、NearLink 星闪 SDK。</div>
+        <div class="lr-row"><b>适学基础</b>：零基础可入门，会 JavaScript/TypeScript 上手更快；大一非常适合作为第一个完整 App 练手。</div>
+        <div class="lr-links">
+          <a href="https://developer.huawei.com/consumer/cn/doc/" target="_blank" rel="noopener">开发文档 ↗</a>
+          <a href="https://developer.huawei.com/consumer/cn/sdk/nearlink-kit/" target="_blank" rel="noopener">NearLink SDK ↗</a>
+          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=XL0L0sK2ENrPjPausPnTSlESw9o" target="_blank" rel="noopener">在线课程 ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="openeuler">
+      <div class="lr-side"><span class="lr-tag">操作系统</span><span class="lr-idx">05</span></div>
+      <div>
+        <h2>openEuler 开源操作系统</h2>
+        <p class="lr-desc">开源 Linux 服务器发行版，是国产服务器与鲲鹏生态的主流操作系统底座。</p>
+        <div class="lr-row"><b>主要内容</b>：安装与日常运维、Shell 与 systemd、内核与驱动、容器与云原生基础。</div>
+        <div class="lr-row"><b>适学基础</b>：有一点 Linux 命令行基础最好；可与《操作系统》课程同步学，大一先练命令与装系统。</div>
+        <div class="lr-links">
+          <a href="https://docs.openeuler.openatom.cn/zh/" target="_blank" rel="noopener">官方文档 ↗</a>
+          <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=cK1Ah7-CwXBgeBs4nO5ettLReAc" target="_blank" rel="noopener">在线课程 ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="opengauss">
+      <div class="lr-side"><span class="lr-tag">数据库</span><span class="lr-idx">06</span></div>
+      <div>
+        <h2>openGauss 关系型数据库</h2>
+        <p class="lr-desc">开源关系型数据库，华为 GaussDB 的内核来源，国产数据库方向的入门主线。</p>
+        <div class="lr-row"><b>主要内容</b>：SQL 与存储过程、安装部署与参数配置、备份恢复、性能调优、主备高可用。</div>
+        <div class="lr-row"><b>适学基础</b>：需先会 SQL 与数据库基本概念；大一可先自学 SQL，等学过《数据库原理》再深入。</div>
+        <div class="lr-links">
+          <a href="https://docs.opengauss.org/zh/" target="_blank" rel="noopener">官方文档 ↗</a>
+          <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=8wZbzgAUXSolTT0QLaiCqKtlbGM" target="_blank" rel="noopener">在线课程 ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="cangjie">
+      <div class="lr-side"><span class="lr-tag">编程语言</span><span class="lr-idx">07</span></div>
+      <div>
+        <h2>仓颉 Cangjie</h2>
+        <p class="lr-desc">华为自研的静态强类型编程语言，面向全场景智能应用，主打原生并发与跨语言互操作。</p>
+        <div class="lr-row"><b>主要内容</b>：语法与类型系统、并发模型、与 ArkTS/Java 互操作、包管理与工具链。</div>
+        <div class="lr-row"><b>适学基础</b>：已有 C / Java / Python 任一基础者最合适；零基础不建议从它起步，先打好一门主流语言。</div>
+        <div class="lr-links">
+          <a href="https://cangjie-lang.cn/docs" target="_blank" rel="noopener">语言文档 ↗</a>
+          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=4nejfEe0B_cV06_21BnY9Sy60-Q" target="_blank" rel="noopener">在线课程 ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="codearts">
+      <div class="lr-side"><span class="lr-tag">应用</span><span class="lr-idx">08</span></div>
+      <div>
+        <h2>华为云码道 CodeArts</h2>
+        <p class="lr-desc">华为云一站式软件开发生产线（DevOps），把需求、代码、构建、测试、部署串成一条流水线，含 AI 辅助编程。</p>
+        <div class="lr-row"><b>主要内容</b>：项目与代码托管、CI/CD 流水线、代码检查与安全扫描、AI 生成与补全代码。</div>
+        <div class="lr-row"><b>适学基础</b>：零基础即可上手，适合课程设计、团队项目里练工程协作与版本管理。</div>
+        <div class="lr-links">
+          <a href="https://www.huaweicloud.com/product/codearts/ai.html" target="_blank" rel="noopener">产品介绍 ↗</a>
+          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=perj-8txgrLOH9exDX7Rq9S5Mvo" target="_blank" rel="noopener">在线课程 ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="datacom">
+      <div class="lr-side"><span class="lr-tag">通信</span><span class="lr-idx">09</span></div>
+      <div>
+        <h2>数据通信、网络安全</h2>
+        <p class="lr-desc">华为 ICT 学院的数据通信与网络安全方向课程，是网络工程的入门主线，可衔接 HCIA 认证路线。</p>
+        <div class="lr-row"><b>主要内容</b>：TCP/IP 与路由交换、网络协议分析、安全基础与防火墙、常见攻防意识。</div>
+        <div class="lr-row"><b>适学基础</b>：零基础可学，大一即可开始；与《计算机网络》课程同步效果最好。</div>
+        <div class="lr-links">
+          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=6NUCDEBHwRLwUI6I-81YTaMJHrk" target="_blank" rel="noopener">数通课程 ↗</a>
+          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=5F6BWEhKtVbD3qTe8jjFfG48Mws" target="_blank" rel="noopener">安全课程 ↗</a>
+          <span>该方向仅提供课程，无公开文档</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="storage">
+      <div class="lr-side"><span class="lr-tag">通信</span><span class="lr-idx">10</span></div>
+      <div>
+        <h2>存储</h2>
+        <p class="lr-desc">华为存储方向课程，覆盖企业级存储与数据保护，可衔接 HCIA-Storage 认证路线。</p>
+        <div class="lr-row"><b>主要内容</b>：RAID 与磁盘基础、SAN/NAS 组网、分布式存储、备份与容灾。</div>
+        <div class="lr-row"><b>适学基础</b>：零基础可学，有一点网络基础更顺；大一以了解概念为主，不必急于考证。</div>
+        <div class="lr-links">
+          <a href="https://e.huawei.com/cn/talent/ict-academy/#/ict-courses-detail?courseId=kyVS7OvayWvNDWF6hoBTcopya3Y" target="_blank" rel="noopener">在线课程 ↗</a>
+          <span>该方向仅提供课程，无公开文档</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="lr-item" id="wireless">
+      <div class="lr-side"><span class="lr-tag">通信</span><span class="lr-idx">11</span></div>
+      <div>
+        <h2>无线、光</h2>
+        <p class="lr-desc">华为无线接入与光传输方向课程，面向 5G 网络与光通信，偏通信工程与电子信息方向。</p>
+        <div class="lr-row"><b>主要内容</b>：5G 网络架构与无线接入、OTN/WDM 光传输、站点与链路基础。</div>
+        <div class="lr-row"><b>适学基础</b>：零基础可学，适合对通信、电子方向感兴趣的同学；配合《信号与系统》等课程理解更快。</div>
+        <div class="lr-links">
+          <a href="https://e.huawei.com/cn/talent/learning/#/zone?customizedZoneId=Y3pmAdQYpsikDNMpbK7YSAvPAy8" target="_blank" rel="noopener">在线课程 ↗</a>
+          <span>该方向仅提供课程，无公开文档</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    <p>20260624 班 · <a href="index.html#competition">返回首页竞赛&amp;指导</a> · 资料链接来自华为技术领域资源及课程清单，仅作学习导航使用。</p>
+  </footer>
+</div>
+
+</body>
+</html>
